@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/headerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/titleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/titleView"
+            android:id="@+id/messageTips"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/tips_background"/>
+
+        <Switch
+            android:id="@+id/wifiSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:thumb="@drawable/switch_button_alpha"
+            android:track="@drawable/switch_button_alpha_track" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/mainBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headerView"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/notConnected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:paddingBottom="20dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/autoConnected"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/auto_connected_button"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:text="@string/auto_connected"
+                android:textColor="@drawable/auto_connected_color"
+                android:textStyle="normal"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/wifiNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/autoConnected"
+                android:layout_centerHorizontal="true"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/hasConnected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/wifiSsid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:textColor="@android:color/white"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/currentLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/wifiSsid"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:maxWidth="260dp"
+                android:singleLine="true"
+                android:text="@string/fetching_address"
+                android:textColor="#f0f0f0"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/currentLocation"
+                android:layout_marginTop="35dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/wifiPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/wifiItemPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/show_wifi_password"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/wifiDisconnect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/wifiItemDisconnect"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/disconnected_wifi"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+        <RelativeLayout
+            android:layout_below="@+id/mainBox"
+            android:id="@+id/hasResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/wifiListNumber"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="#22968b"
+                android:gravity="center_vertical"
+                android:paddingEnd="10dp"
+                android:paddingStart="15dp"
+                android:textColor="@android:color/white"
+                android:textSize="10sp" />
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:layout_below="@id/wifiListNumber"
+                android:id="@+id/swipeRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:dividerHeight="1px"
+                android:fadingEdge="none"
+                android:overScrollMode="never"
+                android:scrollbars="none" />
+            </android.support.v4.widget.SwipeRefreshLayout>
+        </RelativeLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_below="@id/mainBox"
+            android:id="@+id/noResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/earth" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/empty_result"
+                        android:textColor="#333"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/empty_result_description"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/mainBox"
+        android:id="@+id/noLocationService"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/location" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/location_invalid"
+                android:textColor="#333"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/location_invalid_description"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/mainBox"
+        android:id="@+id/noWifiService"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/wifi_off" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/wifi_invalid"
+                android:textColor="#333"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/wifi_invalid_description"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/loadingAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/mainBox"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ProgressBar
+                style="?android:attr/progressBarStyle"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+            <TextView
+                android:id="@+id/loadingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:textColor="#666" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

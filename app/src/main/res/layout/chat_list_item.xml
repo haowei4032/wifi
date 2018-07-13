@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/yoursView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp">
+
+        <hk.haowei.wifi.view.ImageViewEx
+            android:id="@+id/yoursAvatar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/avatar"
+            app:border_color="#00000000"
+            app:border_width="0dp" />
+
+        <LinearLayout
+            android:id="@+id/yoursBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/yoursAvatar">
+
+            <TextView
+                android:id="@+id/yoursMsgText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chat_yours_background"
+                android:lineSpacingMultiplier="1.15"
+                android:linksClickable="true"
+                android:padding="10dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/yoursVoiceMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chat_yours_background"
+                android:drawablePadding="15dp"
+                android:drawableStart="@drawable/icon_u_voice"
+                android:lineSpacingMultiplier="1.15"
+                android:linksClickable="true"
+                android:padding="10dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:id="@+id/unreadVoiceMsg"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:background="@drawable/unread_voice_msg"
+                android:visibility="gone"/>
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/yoursImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:riv_border_color="#b0b0b0"
+                app:riv_border_width="1px"
+                app:riv_corner_radius="5dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/myView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
+        android:visibility="gone">
+
+        <hk.haowei.wifi.view.ImageViewEx
+            android:id="@+id/myAvatar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/avatar"
+            android:visibility="gone"
+            app:border_color="#00000000"
+            app:border_width="0dp" />
+
+        <RelativeLayout
+            android:id="@+id/myBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_toStartOf="@+id/myAvatar">
+
+            <TextView
+                android:id="@+id/myMsgText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chat_my_background"
+                android:lineSpacingMultiplier="1.15"
+                android:linksClickable="true"
+                android:padding="10dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
+                android:text="@string/app_name"
+                android:textColor="#222222"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/myVoiceMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chat_my_background"
+                android:drawableEnd="@drawable/icon_i_voice"
+                android:drawablePadding="15dp"
+                android:lineSpacingMultiplier="1.15"
+                android:linksClickable="true"
+                android:padding="10dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
+                android:textColor="#222222"
+                android:textSize="16sp" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/myImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:riv_border_color="#b0b0b0"
+                app:riv_border_width="1px"
+                app:riv_corner_radius="5dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

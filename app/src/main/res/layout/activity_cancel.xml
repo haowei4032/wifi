@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:id="@+id/headerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#26a69a">
+
+        <TextView
+            android:id="@+id/firstButton"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/first_button"
+            android:gravity="center"
+            android:text="@string/first_button"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/titleView"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/headerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel_descript"
+            android:lineSpacingMultiplier="1.35"
+            android:textSize="14sp"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/colorPrimaryDark"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wifi_ssid_label"
+            android:textSize="14sp"
+            android:textColor="#666"
+            />
+        <EditText
+            android:id="@+id/wifiSsidName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/edit_text"
+            android:textSize="14sp"
+            android:hint="@string/wifi_ssid_placeholder"/>
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wifi_password_label"
+            android:textSize="14sp"
+            android:textColor="#666"
+            />
+        <EditText
+            android:id="@+id/wifiPassword"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/edit_text"
+            android:inputType="textPassword"
+            android:textSize="14sp"
+            android:hint="@string/wifi_password_placeholder"/>
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wifi_bssid_label"
+            android:textSize="14sp"
+            android:textColor="#666"
+            />
+        <EditText
+            android:id="@+id/wifiBssid"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/edit_text"
+            android:textSize="14sp"
+            android:hint="@string/wifi_bssid_placeholder" />
+
+        <TextView
+            android:layout_marginTop="25dp"
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:text="@string/confirm_submit"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:background="@drawable/user_login_button"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+</RelativeLayout>

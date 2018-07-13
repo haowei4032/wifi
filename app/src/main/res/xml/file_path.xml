@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path
+        name="extmedia" path="media" />
+    <external-path
+        name="extdownload" path="download"/>
+    <external-cache-path
+        name="extcache" path="." />
+    <external-files-path
+        name="extfiles" path="." />
+</paths>

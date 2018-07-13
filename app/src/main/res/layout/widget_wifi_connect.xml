@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingEnd="15dp"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/connectWifiSsid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/wifi_connect_to"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/password_background">
+
+                <EditText
+                    android:id="@+id/connectWifiPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
+                    android:hint="@string/connect_wifi_password"
+                    android:inputType="textPassword"
+                    android:textColorHint="#d0d0d0"
+                    android:textCursorDrawable="@drawable/password_cursor"
+                    android:textSize="16sp"
+                    android:ems="14" />
+
+                <CheckBox
+                    android:id="@+id/connectWifiSwitchPwd"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:button="@null"
+                    android:background="@drawable/switch_view_password" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/connectWifiShared"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:drawablePadding="3dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/checkbox_background"
+                    android:button="@null"
+                    android:checked="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/wifi_connect_shared"
+                    android:textColor="#aaa"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/widget_border_top"
+            android:orientation="horizontal"
+            android:padding="1px">
+
+            <TextView
+                android:id="@+id/connectWifiOk"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:background="@drawable/widget_button_background"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="@string/wifi_connect_ok"
+                android:textColor="@drawable/widget_button_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/connectWifiCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:background="@drawable/widget_button_background2"
+                android:gravity="center"
+                android:text="@string/wifi_connect_cancel"
+                android:textColor="#333"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

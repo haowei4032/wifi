@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:text="@string/confirm_logout_text"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="#333"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/widget_border_top"
+            android:orientation="horizontal"
+            android:padding="1px">
+
+            <TextView
+                android:id="@+id/ok_button"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:background="@drawable/widget_button_background"
+                android:gravity="center"
+                android:text="@string/wifi_connect_ok"
+                android:textColor="#ff0000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/cancel_button"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:background="@drawable/widget_button_background2"
+                android:gravity="center"
+                android:text="@string/wifi_connect_cancel"
+                android:textColor="#222"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

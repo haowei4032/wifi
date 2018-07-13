@@ -1,0 +1,95 @@
+apply plugin: 'com.android.application'
+
+def buildDate = new Date().format("yyyyMMdd")
+def buildDatetime = new Date().format("yyyy-MM-dd HH:mm:ss")
+def releaseTime = new Date().format("yyyyMMddHHmm", TimeZone.getTimeZone("GMT+8"))
+
+android {
+    signingConfigs {
+        release {
+            keyAlias 'wifi'
+            keyPassword 'haowei2018'
+            storeFile file('/home/haowei/keystore/wifi.jks')
+            storePassword 'haowei2018'
+        }
+    }
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "hk.haowei.wifi"
+        minSdkVersion 23
+        targetSdkVersion 27
+        versionCode 2
+        versionName "1.0.1"
+        flavorDimensions "versionCode"
+    }
+    buildTypes {
+        release {
+            //applicationIdSuffix ".release.v${defaultConfig.versionCode}"
+            buildConfigField "String", "USER_AGENT", "\"Mozilla/5.0 (Linux; x64) HWifi ${defaultConfig.versionName}\""
+            buildConfigField "String", "BUILD_DATE", "\"${buildDate}\""
+            buildConfigField "String", "BUILD_DATETIME", "\"${buildDatetime}\""
+            buildConfigField "String", "URL", '"http://app.haowei.me/"'
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            zipAlignEnabled true
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            applicationVariants.all { variant ->
+                variant.outputs.all  { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        def fileName = "hwifi_v${defaultConfig.versionName}_build_${releaseTime}_${variant.productFlavors[0].name}.apk"
+                        outputFileName = fileName
+                    }
+                }
+            }
+
+            /*manifestPlaceholders = [
+                    "buildType": "release",
+                    "versionCode": "${defaultConfig.versionCode}"
+            ]*/
+
+        }
+        debug {
+            //applicationIdSuffix ".debug.v${defaultConfig.versionCode}"
+            buildConfigField "String", "USER_AGENT", "\"Mozilla/5.0 (Linux; x64) HWifi ${defaultConfig.versionName} for dev\""
+            buildConfigField "String", "BUILD_DATE", "\"${buildDate}\""
+            buildConfigField "String", "BUILD_DATETIME", "\"${buildDatetime}\""
+            buildConfigField "String", "URL", '"http://app.haowei.me/"'
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            zipAlignEnabled true
+            /*manifestPlaceholders = [
+                    "buildType": "debug",
+                    "versionCode": "${defaultConfig.versionCode}"
+            ]*/
+        }
+
+        productFlavors {
+            huawei {
+                buildConfigField "int", "CHANNEL_ID", "1"
+                buildConfigField "String", "CHANNEL_NAME", '"华为应用市场"'
+                buildConfigField "String", "CHANNEL_PACKAGE", '"com.huawei.appmarket"'
+            }
+            tencent {
+                buildConfigField "int", "CHANNEL_ID", "2"
+                buildConfigField "String", "CHANNEL_NAME", '"腾讯应用宝"'
+                buildConfigField "String", "CHANNEL_PACKAGE", '"com.tencent.android.qqdownloader"'
+            }
+            mi {
+                buildConfigField "int", "CHANNEL_ID", "3"
+                buildConfigField "String", "CHANNEL_NAME", '"小米应用市场"'
+                buildConfigField "String", "CHANNEL_PACKAGE", '"com.xiaomi.market"'
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation 'org.java-websocket:Java-WebSocket:1.3.8'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+}

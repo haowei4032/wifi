@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">好为WiFi管家</string>
+    <string name="app_skip_button">跳过广告%s</string>
+    <string name="app_copyright_text">&#169;好为网络技术有限公司</string>
+
+    <string name="message_title">我的消息</string>
+    <string name="chat_input_placeholder">请输入内容</string>
+    <string name="pressed_to_speaking">按住 说话</string>
+    <string name="unpress_to_send">松开 结束</string>
+    <string name="move_to_cancel">松开手指，取消发送</string>
+
+    <string name="letter_email_placeholder">请输入你的邮箱</string>
+    <string name="letter_body_placeholder">请输入您的问题或建议</string>
+    <string name="cancel_descript">请确保以下信息都填写正确，否则会因为无法验证您的热点主人有效身份而无法审核通过。</string>
+    <string name="wifi_ssid_label">热点SSID名称</string>
+    <string name="wifi_password_label">热点密码</string>
+    <string name="wifi_bssid_label">路由BSSID地址</string>
+
+    <string name="wifi_bssid_placeholder">请输入bssid地址</string>
+    <string name="wifi_ssid_placeholder">请输入ssid名称</string>
+    <string name="wifi_password_placeholder">请输入密码</string>
+
+    <string name="upgrade_new_version">立即更新</string>
+    <string name="find_has_new_version">发现新版本</string>
+    <string name="confirm_logout_text">确定退出登录？</string>
+
+    <string name="profile_title">个人资料</string>
+    <string name="confirm_submit">确 定</string>
+    <string name="letter_label_text">问题描述或建议</string>
+    <string name="letter_title">意见反馈</string>
+    <string name="letter_contact_email">联系邮箱</string>
+
+    <string name="logout_successful">退出登录</string>
+    <string name="auto_loginning">自动登录</string>
+    <string name="login_successful">登录成功</string>
+    <string name="no_set_nickname">未设置名称</string>
+    <string name="auto_connected">一键连接安全WiFi</string>
+    <string name="has_connected_number">附近有%d个WiFi可用</string>
+    <string name="no_connected_number">附近没有WiFi可用</string>
+    <string name="wifi_list_number">附近可用WiFi列表(%d)</string>
+
+    <string name="advert_title">广告投放</string>
+    <string name="cancel_shared_title">取消分享热点</string>
+    <string name="empty_result">搜索不到WiFi列表</string>
+    <string name="empty_result_description">这里是火星吗？我竟然搜索不到WiFi列表</string>
+
+    <string name="invite_title">邀请好友</string>
+
+    <string name="one_connecting">正在连接 %s</string>
+    <string name="one_connect_wrong_password">%s 连接失败，密码错误</string>
+
+    <string name="wifi_wrong_password">WiFi密码错误</string>
+    <string name="connect_wifi_password">请输入密码</string>
+    <string name="wifi_connect_to">WiFi连接到%s</string>
+    <string name="wifi_connect_shared">分享为公共WiFi</string>
+    <string name="wifi_connect_ok">确定</string>
+    <string name="wifi_connect_cancel">取消</string>
+
+    <string name="wifi_scanning">WiFi热点扫描中</string>
+    <string name="openning_wifi_service">正在打开WiFi</string>
+    <string name="closing_wifi_service">正在关闭WiFi</string>
+
+    <string name="wifi_invalid">WiFi服务不可用</string>
+    <string name="wifi_invalid_description">WiFi服务不可用，请打开右上角WiFi开关</string>
+
+    <string name="location_invalid">位置服务不可用</string>
+    <string name="location_invalid_description">扫描附近的WiFi列表，需要打开位置服务</string>
+    <string name="fetching_address">获取中</string>
+    <string name="show_wifi_password">查看密码</string>
+    <string name="disconnected_wifi">断开连接</string>
+
+    <string name="list_pull_refersh">下拉刷新</string>
+    <string name="list_release_refersh">释放刷新</string>
+    <string name="list_refershing">正在刷新</string>
+
+    <string name="mobile_country_code">+86</string>
+    <string name="mobile_placeholder">请输入手机号码</string>
+    <string name="smscode_placeholder">请输入验证码</string>
+    <string name="user_send_code">获取验证码</string>
+
+    <string name="login_title">手机快速登录</string>
+    <string name="about_title">"关于我们"</string>
+    <string name="map_title">"WiFi地图"</string>
+
+    <string name="setting_title">设置</string>
+    <string name="first_button">&#xe61d;</string>
+
+    <string name="user_login_button">登 录</string>
+    <string name="user_login">立即登录</string>
+    <string name="user_login_extra">领积分，换大奖</string>
+</resources>

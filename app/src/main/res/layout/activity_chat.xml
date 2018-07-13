@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/headerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#26a69a">
+
+        <TextView
+            android:id="@+id/firstButton"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/first_button"
+            android:gravity="center"
+            android:text="@string/first_button"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/titleView"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/messageListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+        android:divider="#00000000"
+        android:fadingEdge="none"
+        android:listSelector="@android:color/transparent"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:transcriptMode="alwaysScroll" />
+
+    <LinearLayout
+        android:id="@+id/inputArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/chat_border_top"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/messageVoiceBtn"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/icon_voice"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/messageTextBtn"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/icon_keyboard" />
+
+        <EditText
+            android:id="@+id/messageText"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:background="@drawable/chat_input_background"
+            android:hint="@string/chat_input_placeholder"
+            android:lineSpacingMultiplier="1.15"
+            android:lines="4"
+            android:padding="6dp"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <hk.haowei.wifi.view.RecordButton
+            android:id="@+id/voicePressed"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:background="@drawable/pressed_speaking"
+            android:gravity="center"
+            android:text="@string/pressed_to_speaking"
+            android:textColor="#666666"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/messageEmoji"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/icon_emoji" />
+
+        <ImageView
+            android:id="@+id/messageMore"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/icon_more_add" />
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:visibility="gone" />
+</LinearLayout>
